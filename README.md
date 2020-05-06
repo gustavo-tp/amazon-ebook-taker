@@ -2,7 +2,7 @@
 
 ## ATENÇÃO SUPREMA!!!
 
-Eu executei este script na virada do dia 18 para o dia 19 de abril de 2019 e dois livros dentre os mais de 6000 me geraram custos de um total de R$ 27,79 (BRL), desconfio que ficaram pagos enquanto o script era executado. Antes de publicar esse vídeo eu executei o script de novo e não obtive gastos.
+Eu executei este script na virada do dia 18 para o dia 19 de Abril de 2019 e dois livros dentre os mais de 6000 me geraram custos de um total de R$ 27,79 (BRL), desconfio que ficaram pagos enquanto o script era executado. Antes de publicar esse vídeo eu executei o script de novo e não obtive gastos.
 
 De qualquer forma eu não me responsabilizo por nenhum gasto extra no seu cartão de crédito. Execute o script por sua conta e risco.
 

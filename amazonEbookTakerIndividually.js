@@ -48,15 +48,26 @@ async function fetchForm() {
   const form = document.getElementById('buyOneClick');
   const formData = new FormData(form);
 
+  if (formData.get('displayedPrice') !== '0.0') {
+    failedPurchaseForms.push(links[linkIndex]);
+    console.log('E-book for: ', links[linkIndex], ' is not free');
+    return;
+  }
+
   await fetch(form.action, {
     method: 'POST',
     body: formData,
   })
-    .then((result) => {
-      console.log('Success:', result);
-      purchaseFormsThatWorked.push(links[linkIndex]);
+    .then(result => {
+      if (result.status === 200) {
+        console.log('Success:', result);
+        purchaseFormsThatWorked.push(links[linkIndex]);
+      } else {
+        console.log(`Request failed: ${links[linkIndex]}`);
+        failedPurchaseForms.push(links[linkIndex]);
+      }
     })
-    .catch((error) => {
+    .catch(error => {
       console.error('Error:', error);
       console.log(`Request failed: ${links[linkIndex]}`);
       failedPurchaseForms.push(links[linkIndex]);

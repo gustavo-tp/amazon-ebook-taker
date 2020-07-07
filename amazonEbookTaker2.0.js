@@ -25,7 +25,7 @@ NodeList.prototype.map = Array.prototype.map;
 
 function getPurchaseLinks() {
   fetch(
-    `https://www.amazon.com.br/eBooks-Gratuitos-Gr%C3%A1tis-Loja-Kindle/s?rh=n%3A6311441011%2Cp_36%3A5560478011&page=${pageNumber}`
+    `https://www.amazon.com.br/eBooks-Kindle-Gr%C3%A1tis-Loja/s?i=digital-text&rh=n%3A5475882011%2Cp_36%3A5560478011&page=${pageNumber}`
   )
     .then(handlePageReturnedSuccessfully)
     .then(includePageHtmlInDocument)
@@ -58,17 +58,27 @@ function getAllNormalLinksInPage() {
 }
 
 function fetchLink(link) {
-  purchaseLinksThatWorked = [];
-  failedPurchaseLinks = [];
-
   return new Promise((resolve, reject) => {
+    if (!link.href.includes('price=0.0')) {
+      failedPurchaseLinks.push(link.href);
+      console.log('E-book for: ', link.href, ' is not free');
+      reject(`E-book for: ${link.href} is not free`);
+      return;
+    }
+
     fetch(link.href)
-      .then((response) => {
-        purchaseLinksThatWorked.push(link.href);
-        console.log('Successful request for: ', link.href);
-        resolve(`Successful request for: ${link.href}`);
+      .then(response => {
+        if (response.status === 200) {
+          purchaseLinksThatWorked.push(link.href);
+          console.log('Successful request for: ', link.href);
+          resolve(`Successful request for: ${link.href}`);
+        } else {
+          failedPurchaseLinks.push(link.href);
+          console.log('Unsuccessful request for: ', link.href);
+          reject(`Unsuccessful request for: ${link.href}`);
+        }
       })
-      .catch((error) => {
+      .catch(error => {
         failedPurchaseLinks.push(link.href);
         console.log('Unsuccessful request for: ', link.href);
         reject(`Unsuccessful request for: ${link.href}`);
@@ -77,10 +87,12 @@ function fetchLink(link) {
 }
 
 async function fetchAllPurchaseLinks() {
+  purchaseLinksThatWorked = [];
+  failedPurchaseLinks = [];
+
   const buttonLinks = document.querySelectorAll('a[href^="/gp/product/"]');
 
-  await Promise.allSettled(buttonLinks.map((link) => fetchLink(link)))
-    .then((response) => console.log(response));
+  await Promise.allSettled(buttonLinks.map(fetchLink)).then(console.log);
 }
 
 function checkPagesThatMustBeAccessedIndividually() {

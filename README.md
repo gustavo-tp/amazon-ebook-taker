@@ -2,15 +2,23 @@
 
 ## ATENÇÃO SUPREMA!!!
 
-Eu executei este script na virada do dia 18 para o dia 19 de Abril de 2019 e dois livros dentre os mais de 6000 me geraram custos de um total de R$ 27,79 (BRL), desconfio que ficaram pagos enquanto o script era executado. Antes de publicar esse vídeo eu executei o script de novo e não obtive gastos.
+Eu executei este script na virada do dia 18 para o dia 19 de Abril de 2020 e dois livros dentre os mais de 6000 me geraram custos de um total de R$ 27,79 (BRL), desconfio que ficaram pagos enquanto o script era executado. Antes de publicar esse vídeo eu executei o script de novo e não obtive gastos.
 
 De qualquer forma eu não me responsabilizo por nenhum gasto extra no seu cartão de crédito. Execute o script por sua conta e risco.
 
+#### POSSÍVEL SOLUÇÃO
+
+Foi adicionado um condicional que verifica antes de realizar a requisição se o preço do e-book equivale a zero.
+
 ## SUPREME ATTENTION!!!
 
-I executed this script at the turn of the 18th to the 19th of April 2019 and two books out of more than 6000 generated costs for a total of R$ 27.79 (BRL), I suspect they were paid while the script was being executed. Before publishing this video I ran the script again and did not get any expenses.
+I executed this script at the turn of the 18th to the 19th of April 2020 and two books out of more than 6000 generated costs for a total of R$ 27.79 (BRL), I suspect they were paid while the script was being executed. Before publishing this video I ran the script again and did not get any expenses.
 
 Anyway, I am not responsible for any extra expenses on your credit card. Run the script at your own risk.
+
+#### POSSIBLE SOLUTION
+
+A conditional has been added that checks before making the request if the price of the e-book is equal to zero.
 
 ### ATENÇÃO!!!
 

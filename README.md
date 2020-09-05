@@ -35,3 +35,5 @@ I am not responsible for crashes in your Kindle application or device, or for re
   </a>
 </p>
 <p align="center"><a href="https://youtu.be/4ubhQ3oSQmE">https://youtu.be/4ubhQ3oSQmE</a></p>
+
+Link para a explicação do vídeo em formato de artigo: [https://link.medium.com/HhRudlbow9](https://link.medium.com/HhRudlbow9).
